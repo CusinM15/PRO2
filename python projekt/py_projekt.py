@@ -2,7 +2,7 @@
 import requests
 import re
 
-'Kva'
+'Kvakavajo žabe'
 
 """
 p2.3 - Game of Thrones characters
