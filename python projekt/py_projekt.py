@@ -1,13 +1,16 @@
-
 import requests
 import re
 
-neki = re.split(r'<PodatkiObjave>',requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml').text)
+
+r = requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml')
+r.encoding = "utf-8"
+
+neki = re.split(r'<PodatkiObjave>',r.text)
 
 for i, dr in enumerate(neki):
   znak = re.findall(r'<PodatekObjave ime=".+" opis=".+">.+</PodatekObjave>', dr)
-  for aa in znak:
-    aa = re.sub(r'<.*?>', '', aa)
-    print(aa)
+  for lastnost in znak:
+    lastnost = re.sub(r'<.*?>', '', lastnost)
+    print(lastnost)
   if i > 10:
     break
