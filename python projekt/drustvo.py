@@ -13,7 +13,7 @@ class drustvo:
     def __str__(self):
         return self.mesto
     def __repr__(self):
-        return self.mesto + ', ' + self.naslov
+        return self.mesto + ', ' + self.prosto
         
     
     '''def nahajajo(self):
