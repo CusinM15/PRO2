@@ -1,7 +1,6 @@
 import requests
 import re
 
-
 r = requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml')
 r.encoding = "utf-8"
 
