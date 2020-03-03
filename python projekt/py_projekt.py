@@ -1,8 +1,10 @@
-
 import requests
 import re
 
-neki = re.split(r'<PodatkiObjave>',requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml').text)
+r = requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml')
+r.encoding = "utf-8"
+
+neki = re.split(r'<PodatkiObjave>',r.text)
 
 for i, dr in enumerate(neki):
   znak = re.findall(r'<PodatekObjave ime=".+" opis=".+">.+</PodatekObjave>', dr)
