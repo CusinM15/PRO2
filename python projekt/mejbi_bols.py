@@ -49,9 +49,14 @@ for i in range(len(sez_dru)):
     else:
         slovar[firma.mesto] = {firma.dejavnost: 1}
 
+moc_mesto = list()
+
 for mesto, slo2 in slovar.items():
     vsota_vseh = sum(slovar[mesto].values())
+    moc_mesto.append((vsota_vseh, mesto))
     for dejavnost in slo2:
         slovar[mesto][dejavnost] /= vsota_vseh
+moc_mesto.sort()
+moc_mesto = moc_mesto[::-1]
 
-print(slovar)
+print(moc_mesto)
