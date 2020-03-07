@@ -1,8 +1,5 @@
 import requests
 import re
-from opencage.geocoder import OpenCageGeocode
-
-key = '604f31fcadd74b4dbd1b90852d27606c'
 
 
 class drustvo:
@@ -72,13 +69,5 @@ for i in range(len(sez_dru)):
 for mesto, slo2 in slovar.items():
     vsota_vseh = sum(slovar[mesto].values())
     slovar[mesto] = [slovar[mesto], vsota_vseh]
-# ===============================================================
-
-# izpisovanje koordinatov vsakega mesta (traja, ker je tok mest)
-geocoder = OpenCageGeocode(key)
-
-for mesto in slovar.keys():
-    koord = geocoder.geocode(mesto)
-    lat = koord[0]['geometry']['lat']
-    lng = koord[0]['geometry']['lng']
-    print(mesto + ' z ' + str(slovar[mesto][1]) + ' društvi' + ': ' + str(lat) + ' ' + str(lng))
+print(slovar)
+# ======================================================
