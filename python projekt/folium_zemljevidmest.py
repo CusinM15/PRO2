@@ -69,11 +69,12 @@ for stevilo, mesto in vsa_dru[:10]:
     koord = geocoder.geocode(mesto)
     lat = koord[0]['geometry']['lat']
     lon = koord[0]['geometry']['lng']
+    tekst = "{} <br>Št. društev: {}".format(mesto, stevilo)
     folium.Circle(
         location = [lat, lon],
         clustered_marker = True,
         fill = True,
-        popup = "{} \n {}".format(mesto, stevilo),
+        popup = folium.Popup(tekst, max_width = 100, min_width = 100),
         radius = stevilo * 30,
         color = '#FF7912'
         ).add_to(map)
