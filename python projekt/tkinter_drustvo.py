@@ -100,10 +100,9 @@ class Stevilo():
         '''
             vrne število društeev v tem mestu če jih ta nima vrne 0
         '''
-        if self.ime.get() in slovar:
-            self.rezultat.set(slovar[self.ime.get()])
-        else:
-            self.rezultat.set(0)
+        mesto = self.ime.get()
+        self.rezultat.set(slovar.get(mesto, 0))
+
 
 
 
