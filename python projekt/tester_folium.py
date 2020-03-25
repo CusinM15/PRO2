@@ -39,26 +39,34 @@ for i, dr in enumerate(neki):
         sez_dru.append(vmes)
 
  # ===============================================================
+
+
 slovar = dict() # {mesto:{dejavnost:{imena}}}
 vsa_dru = list()
 for i in range(len(sez_dru)):
     firma = sez_dru[i][1]
     firma = drustvo(sez_dru[i])
-    vsa_dru.append(firma)
     if firma.mesto in slovar:
         if firma.dejavnost in slovar[firma.mesto]:
-            slovar[firma.mesto][firma.dejavnost].add(firma.ime)
+            slovar[firma.mesto][firma.dejavnost] += 1
         else:
-            slovar[firma.mesto][firma.dejavnost] = {firma.ime}
+            slovar[firma.mesto][firma.dejavnost] = 1
     else:
-        slovar[firma.mesto] = {firma.dejavnost: {firma.ime}}
+        slovar[firma.mesto] = {firma.dejavnost: 1}
+
+
+for mesto, slo2 in slovar.items():
+    vsota_vseh = sum(slovar[mesto].values())
+    vsa_dru.append((vsota_vseh, mesto))
+vsa_dru.sort()
+vsa_dru = vsa_dru[::-1]
  # ===============================================================
 
 # izpisovanje lokacij na mapi prvih 10 mest
 geocoder = OpenCageGeocode(key)
 map = folium.Map(location = [46.119944, 14.815333], zoom_start = 9)
 i = 0
-for mesto in slovar.keys():
+for stevilo, mesto in vsa_dru:
     if i == 10:
         break
     koord = geocoder.geocode(mesto)
