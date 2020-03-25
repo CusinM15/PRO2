@@ -1,9 +1,9 @@
 import requests
 import re
 from opencage.geocoder import OpenCageGeocode
+import folium
 
-key = '604f31fcadd74b4dbd1b90852d27606c'
-
+key = '604f31fcadd74b4dbd1b90852d27606c' 
 
 class drustvo:
     def __init__(self, sez):
@@ -23,12 +23,11 @@ class drustvo:
 
     def __repr__(self):
         return self.ime + ', ' + self.naslov
-
-
+    
 r = requests.get('https://www.ajpes.si/ObjaveVPOFiles%5CObjaveVPO.xml')
 r.encoding = "utf-8"
 
-neki = re.split(r'<PodatkiObjave>', r.text)
+neki = re.split(r'<PodatkiObjave>',r.text)
 sez_dru = list()
 for i, dr in enumerate(neki):
     znak = re.findall(r'<PodatekObjave ime=".+" opis=".+">.+</PodatekObjave>', dr)
@@ -39,22 +38,9 @@ for i, dr in enumerate(neki):
     if len(vmes) == 14:
         sez_dru.append(vmes)
 
-# # Izpiše seznam vseh društev, ki imajo iskano vrednost
-# vsa_dru = list()
-# while True:
-#     mesto = input('Ime mesta: ')  # za primer če iščeš samo mesta
-#     if mesto == 'konec':
-#         break
-#     for i in range(len(sez_dru)):
-#         if mesto in sez_dru[i]:
-#             vsa_dru.append(sez_dru[i][1])
-#     if len(vsa_dru) == 0:
-#         print('Teh podatkov ni!')
-#     else:
-#         print(vsa_dru)
-#         vsa_dru = list()
+ # ===============================================================
 
-# ===============================================================
+
 slovar = dict() # {mesto:{dejavnost:{imena}}}
 vsa_dru = list()
 for i in range(len(sez_dru)):
@@ -71,14 +57,34 @@ for i in range(len(sez_dru)):
 
 for mesto, slo2 in slovar.items():
     vsota_vseh = sum(slovar[mesto].values())
-    slovar[mesto] = [slovar[mesto], vsota_vseh]
-# ===============================================================
+    vsa_dru.append((vsota_vseh, mesto))
+vsa_dru.sort()
+vsa_dru = vsa_dru[::-1]
+ # ===============================================================
 
-# izpisovanje koordinatov vsakega mesta (traja, ker je tok mest)
+# izpisovanje lokacij na mapi prvih 10 mest
 geocoder = OpenCageGeocode(key)
-
-for mesto in slovar.keys():
+map = folium.Map(location = [46.119944, 14.815333], zoom_start = 9)
+i = 0
+for stevilo, mesto in vsa_dru:
+    if i == 10:
+        break
     koord = geocoder.geocode(mesto)
     lat = koord[0]['geometry']['lat']
-    lng = koord[0]['geometry']['lng']
-    print(mesto + ' z ' + str(slovar[mesto][1]) + ' društvi' + ': ' + str(lat) + ' ' + str(lng))
+    lon = koord[0]['geometry']['lng']
+    tekst = mesto + '\n' + 'št. društev'
+    folium.Circle(
+        location = [lat, lon],
+        clustered_marker = True,
+        fill = True,
+        popup = tekst,
+        radius = 2500,
+        color = 'crimson',
+        fill_color = '#FF7912', 
+        ).add_to(map)
+    i = i + 1
+    print(mesto + ': ' + str(lat) + ' ' + str(lon))
+
+
+map.save('test.html')
+print('KONČANO!')
