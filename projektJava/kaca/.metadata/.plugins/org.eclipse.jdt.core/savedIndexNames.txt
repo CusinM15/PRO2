@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\MATEJ\github\projektJava\kaca\.metadata\.plugins\org.eclipse.jdt.core
+3941309174.index
+1252311638.index
