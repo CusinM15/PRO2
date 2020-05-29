@@ -7,8 +7,20 @@ import static java.lang.String.format;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
-	 
+
+
+/**
+ * Igrica Kaèa z možnostjo izbire hitrosti.
+ * 
+ * @author Matej/Peter
+ *
+ */
 public class Kaca extends JPanel implements Runnable {
+	
+	/**
+	 * Smer samo shranjuje "smerni vektor" zato da se pozicija primerno spreminja.
+	 * 
+	 */
    enum Smer {
       gor(0, -1), desno(1, 0), dol(0, 1), levo(-1, 0);
  
@@ -34,7 +46,10 @@ public class Kaca extends JPanel implements Runnable {
    int[][] polje;
    List<Point> kaca, mis;
    Font smallFont;
- 
+	/**
+	 * Kaca v bistvu ustvari polje in skrbi za sam potek igre.
+	 * 
+	 */
    public Kaca() {
       setPreferredSize(new Dimension(500, 500));
       setBackground(Color.WHITE);
@@ -88,6 +103,10 @@ public class Kaca extends JPanel implements Runnable {
          });
    }
  
+	/**
+	 * novaIgra poskrbi da ko se zaletimo bodisi v zid bodisi v kaèo
+	 * zaène novo igro. 
+	 */
    void novaIgra() {
       konec = false;
  
@@ -115,7 +134,9 @@ public class Kaca extends JPanel implements Runnable {
          mis.interrupt();
       }
    }
- 
+	/**
+	 * postavi zidove na prava mesta 
+	 */
    void initPolje() {
       polje = new int[nVrstic][nStolpcov];
       for (int r = 0; r < nVrstic; r++) {
@@ -125,7 +146,9 @@ public class Kaca extends JPanel implements Runnable {
          }
       }
    }
- 
+	/**
+	 *run skrbi za premik in hitrost kaèe.
+	 */
    @Override
    public void run() {
  
@@ -150,14 +173,20 @@ public class Kaca extends JPanel implements Runnable {
          repaint();
       }
    }
-
+	/**
+	 * preveri ali smo zadeli zid
+	 * 
+	 */
    boolean hitsZid() {
       Point glava = kaca.get(0);
       int novSto = glava.x + kam.x;
       int novVrs = glava.y + kam.y;
       return polje[novVrs][novSto] == ZID;
    }
- 
+	/**
+	 * preveri ali smo zadeli rep kaèe
+	 * 
+	 */
    boolean hitsKaca() {
       Point glava = kaca.get(0);
       int novSto = glava.x + kam.x;
@@ -167,7 +196,10 @@ public class Kaca extends JPanel implements Runnable {
             return true;
       return false;
    }
- 
+	/**
+	 * preveri ali smo pobrali miš in se zato doda krogec {@link povecaKaca}
+	 * 
+	 */
    boolean pojeMis() {
 	  dodajMis();
       Point glava = kaca.get(0);
@@ -184,7 +216,10 @@ public class Kaca extends JPanel implements Runnable {
       konec = true;
       stop();
    }
- 
+	/**
+	 * skrbi za pozicijo kaèe
+	 * 
+	 */
    void premikKace() {
       for (int i = kaca.size() - 1; i > 0; i--) {
          Point tocka1 = kaca.get(i - 1);
@@ -196,14 +231,19 @@ public class Kaca extends JPanel implements Runnable {
       glava.x += kam.x;
       glava.y += kam.y;
    }
- 
+	/**
+	 * ta pa dobesedno poveèa kaèo
+	 * 
+	 */
    void povecaKaca() {
       Point rep = kaca.get(kaca.size() - 1);
       int x = rep.x + kam.x;
       int y = rep.y + kam.y;
       kaca.add(new Point(x, y));
    }
- 
+   /**
+	 * na prosto mesto doda niš 
+	 */
    void dodajMis() {
       if (mis.size() < 1) {
     	  Random rand = new Random();
@@ -231,7 +271,7 @@ public class Kaca extends JPanel implements Runnable {
          }
       }
    }
- 
+   
    void narisiPolje(Graphics2D plosca) {
       plosca.setColor(Color.black);
       for (int r = 0; r < nVrstic; r++) {
