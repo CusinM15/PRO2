@@ -16,6 +16,24 @@ import javax.swing.*;
  *
  */
 public class Kaca extends JPanel implements Runnable {
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static void main(String[] args) {
+		      SwingUtilities.invokeLater(
+		         () -> {
+		            JFrame glavniZaslon = new JFrame();
+		            glavniZaslon.setResizable(false);
+		            glavniZaslon.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		            glavniZaslon.setTitle("Kaèa");
+		            glavniZaslon.add(new Kaca(), BorderLayout.CENTER);
+		            glavniZaslon.pack();
+		            glavniZaslon.setLocationRelativeTo(null);
+		            glavniZaslon.setVisible(true);
+		            
+			         });
+			   }
 	
 	/**
 	 * Smer samo shranjuje "smerni vektor" zato da se pozicija primerno spreminja.
@@ -38,7 +56,7 @@ public class Kaca extends JPanel implements Runnable {
    volatile boolean konec = true;
  
    Thread igrMis;
-   int tocke;
+   int tocke = 0;
    int nVrstic = 50;
    int nStolpcov = 50;
    Smer kam;
@@ -333,18 +351,6 @@ public class Kaca extends JPanel implements Runnable {
       }
    }
  
-   public static void main(String[] args) {
-      SwingUtilities.invokeLater(
-         () -> {
-            JFrame glavniZaslon = new JFrame();
-            glavniZaslon.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            glavniZaslon.setTitle("Kaèa");
-            glavniZaslon.setResizable(true);
-            glavniZaslon.add(new Kaca(), BorderLayout.CENTER);
-            glavniZaslon.pack();
-            glavniZaslon.setLocationRelativeTo(null);
-            glavniZaslon.setVisible(true);
-	         });
-	   }
+
 	
 }
