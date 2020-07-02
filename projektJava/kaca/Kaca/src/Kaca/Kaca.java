@@ -10,7 +10,8 @@ import javax.swing.*;
 
 
 /**
- * Igrica Kaèa z možnostjo izbire hitrosti.
+ * Vbistvu bo ta komentar zamenjal README (saj Git in eclipe nista zelo kompatibilna):
+ * Igrica Kaèa v bistvu nama je v izpitnem èasu zmankalo èasa, da bi uredila izbiro hitrosti.
  * 
  * @author Matej/Peter
  *
