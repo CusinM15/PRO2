@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0c0d6d7bef334610aefe64d741c2fec1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_0c0d6d7bef334610aefe64d741c2fec1" ></div>
+        
+</body>
+<script>    
+    
+            var map_0c0d6d7bef334610aefe64d741c2fec1 = L.map(
+                "map_0c0d6d7bef334610aefe64d741c2fec1",
+                {
+                    center: [46.119944, 14.815333],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_26bc97817c604f75aca59668ab1ac8f5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+            var circle_8743438128a44834b33fc9c492d5dbba = L.circle(
+                [46.0499803, 14.5068602],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13920, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_f02494cc5981457d9d2a2593a5764c8e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_09b6eabeda734af0a0b61d7c226aaf3e = $(`<div id="html_09b6eabeda734af0a0b61d7c226aaf3e" style="width: 100.0%; height: 100.0%;">Ljubljana <br>Št. društev: 464</div>`)[0];
+            popup_f02494cc5981457d9d2a2593a5764c8e.setContent(html_09b6eabeda734af0a0b61d7c226aaf3e);
+        
+
+        circle_8743438128a44834b33fc9c492d5dbba.bindPopup(popup_f02494cc5981457d9d2a2593a5764c8e)
+        ;
+
+        
+    
+    
+            var circle_d1ae8c2e21394a07b81ef87e41447f6a = L.circle(
+                [46.555628, 15.64477],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6000, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_6edac70e1d9548d3a0f2ece22b2fe4b2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_d9be395c55114c1a8ebf21b01165bc76 = $(`<div id="html_d9be395c55114c1a8ebf21b01165bc76" style="width: 100.0%; height: 100.0%;">Maribor <br>Št. društev: 200</div>`)[0];
+            popup_6edac70e1d9548d3a0f2ece22b2fe4b2.setContent(html_d9be395c55114c1a8ebf21b01165bc76);
+        
+
+        circle_d1ae8c2e21394a07b81ef87e41447f6a.bindPopup(popup_6edac70e1d9548d3a0f2ece22b2fe4b2)
+        ;
+
+        
+    
+    
+            var circle_6c6b1ee436e9464ab939e67407d4afc2 = L.circle(
+                [46.2309234, 15.2659932],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2610, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_326177595b0d4e4795f564c9654f762d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_2a0170bc8aea43598d9c70cbc5e42c66 = $(`<div id="html_2a0170bc8aea43598d9c70cbc5e42c66" style="width: 100.0%; height: 100.0%;">Celje <br>Št. društev: 87</div>`)[0];
+            popup_326177595b0d4e4795f564c9654f762d.setContent(html_2a0170bc8aea43598d9c70cbc5e42c66);
+        
+
+        circle_6c6b1ee436e9464ab939e67407d4afc2.bindPopup(popup_326177595b0d4e4795f564c9654f762d)
+        ;
+
+        
+    
+    
+            var circle_21d01798e91546d088bf3afded268237 = L.circle(
+                [45.8040475, 15.1696684],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1440, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_4d627700bbf043e789049f66ba88eab5 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_55f12efcf0134f5c90576d006fb51945 = $(`<div id="html_55f12efcf0134f5c90576d006fb51945" style="width: 100.0%; height: 100.0%;">Novo mesto <br>Št. društev: 48</div>`)[0];
+            popup_4d627700bbf043e789049f66ba88eab5.setContent(html_55f12efcf0134f5c90576d006fb51945);
+        
+
+        circle_21d01798e91546d088bf3afded268237.bindPopup(popup_4d627700bbf043e789049f66ba88eab5)
+        ;
+
+        
+    
+    
+            var circle_10401dd87c5e4fa785a4eeaa3b2b886d = L.circle(
+                [11.0968195, -2.9290149],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1440, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_f115bbc36b8c40fb97d2e13c4a5b90a2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_c8aa1176254c46f5b0cef4afc8ea02b8 = $(`<div id="html_c8aa1176254c46f5b0cef4afc8ea02b8" style="width: 100.0%; height: 100.0%;">Koper <br>Št. društev: 48</div>`)[0];
+            popup_f115bbc36b8c40fb97d2e13c4a5b90a2.setContent(html_c8aa1176254c46f5b0cef4afc8ea02b8);
+        
+
+        circle_10401dd87c5e4fa785a4eeaa3b2b886d.bindPopup(popup_f115bbc36b8c40fb97d2e13c4a5b90a2)
+        ;
+
+        
+    
+    
+            var circle_2bb5cac3b62541018601a64971de8814 = L.circle(
+                [46.2432635, 14.3549501],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1230, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_99e9ea405329408a99ae84c3a6514d61 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_b2a48759921447838bf401f8473be0f2 = $(`<div id="html_b2a48759921447838bf401f8473be0f2" style="width: 100.0%; height: 100.0%;">Kranj <br>Št. društev: 41</div>`)[0];
+            popup_99e9ea405329408a99ae84c3a6514d61.setContent(html_b2a48759921447838bf401f8473be0f2);
+        
+
+        circle_2bb5cac3b62541018601a64971de8814.bindPopup(popup_99e9ea405329408a99ae84c3a6514d61)
+        ;
+
+        
+    
+    
+            var circle_3a39b35596c4496d878f488aaed865bc = L.circle(
+                [46.3592869, 15.1150301],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 960, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_4559c50d7c5f4be7845a431a366293ed = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_a6368ad26d704d2ab95a4b60341e73a8 = $(`<div id="html_a6368ad26d704d2ab95a4b60341e73a8" style="width: 100.0%; height: 100.0%;">Velenje <br>Št. društev: 32</div>`)[0];
+            popup_4559c50d7c5f4be7845a431a366293ed.setContent(html_a6368ad26d704d2ab95a4b60341e73a8);
+        
+
+        circle_3a39b35596c4496d878f488aaed865bc.bindPopup(popup_4559c50d7c5f4be7845a431a366293ed)
+        ;
+
+        
+    
+    
+            var circle_0af8e915136a4b05a8271ad390bb9ba9 = L.circle(
+                [46.6624644, 16.1655256],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 930, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_916e197137764edfb02dc0a8065ec7ee = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_e1ccdd5e63144a7b87c0675ef3960cdf = $(`<div id="html_e1ccdd5e63144a7b87c0675ef3960cdf" style="width: 100.0%; height: 100.0%;">Murska Sobota <br>Št. društev: 31</div>`)[0];
+            popup_916e197137764edfb02dc0a8065ec7ee.setContent(html_e1ccdd5e63144a7b87c0675ef3960cdf);
+        
+
+        circle_0af8e915136a4b05a8271ad390bb9ba9.bindPopup(popup_916e197137764edfb02dc0a8065ec7ee)
+        ;
+
+        
+    
+    
+            var circle_5e8dd563b62f45ee9b30547db7a5601c = L.circle(
+                [46.1490054, 15.049032],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 840, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_ce62bfc675704d2c93cb589f47709b46 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_67e85ed18a454b08a2126a4d57df8fa0 = $(`<div id="html_67e85ed18a454b08a2126a4d57df8fa0" style="width: 100.0%; height: 100.0%;">Trbovlje <br>Št. društev: 28</div>`)[0];
+            popup_ce62bfc675704d2c93cb589f47709b46.setContent(html_67e85ed18a454b08a2126a4d57df8fa0);
+        
+
+        circle_5e8dd563b62f45ee9b30547db7a5601c.bindPopup(popup_ce62bfc675704d2c93cb589f47709b46)
+        ;
+
+        
+    
+    
+            var circle_81ed806fb60f497cb08b1e54d984e9bd = L.circle(
+                [45.7752438, 14.2117877],
+                {"bubblingMouseEvents": true, "color": "#FF7912", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF7912", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 750, "stroke": true, "weight": 3}
+            ).addTo(map_0c0d6d7bef334610aefe64d741c2fec1);
+        
+    
+        var popup_94b8b6c7ce5b4c1d9520d679011d5f28 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_abbde50930dd4a83a8e90dfdcdde41bb = $(`<div id="html_abbde50930dd4a83a8e90dfdcdde41bb" style="width: 100.0%; height: 100.0%;">Postojna <br>Št. društev: 25</div>`)[0];
+            popup_94b8b6c7ce5b4c1d9520d679011d5f28.setContent(html_abbde50930dd4a83a8e90dfdcdde41bb);
+        
+
+        circle_81ed806fb60f497cb08b1e54d984e9bd.bindPopup(popup_94b8b6c7ce5b4c1d9520d679011d5f28)
+        ;
+
+        
+    
+</script>
