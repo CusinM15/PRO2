@@ -1,1 +1,2 @@
-# Programiranje 2 oba projekta in kattis rešitve.
+#Programiranje 
+Programska koda: malo Jave in Pythona
